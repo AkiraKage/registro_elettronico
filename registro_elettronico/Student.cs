@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace registro_elettronico
 {
-    internal class Student
+    public class Student
     {
 
     }
