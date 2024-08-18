@@ -95,6 +95,7 @@
             this.access_btn.TabIndex = 5;
             this.access_btn.Text = "Accedi";
             this.access_btn.UseVisualStyleBackColor = true;
+            this.access_btn.Click += new System.EventHandler(this.access_btn_Click);
             // 
             // pass_visibility
             // 
@@ -130,6 +131,7 @@
             this.Controls.Add(this.label1);
             this.Name = "UserControl1";
             this.Size = new System.Drawing.Size(836, 523);
+            this.Load += new System.EventHandler(this.UserControl1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
