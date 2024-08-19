@@ -34,7 +34,11 @@
             this.add_btn = new System.Windows.Forms.Button();
             this.new_btn = new System.Windows.Forms.Button();
             this.summary_btn = new System.Windows.Forms.Button();
-            this.userControl11 = new registro_elettronico.UserControl1();
+            this.summaryControl1 = new registro_elettronico.SummaryControl();
+            this.loginControl1 = new registro_elettronico.LoginControl();
+            this.addNewControl1 = new registro_elettronico.AddNewControl();
+            this.addScoresControl1 = new registro_elettronico.AddScoresControl();
+            this.delStudentControl1 = new registro_elettronico.DelStudentControl();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,7 +69,7 @@
             // delete_btn
             // 
             this.delete_btn.Font = new System.Drawing.Font("Alef", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.delete_btn.Location = new System.Drawing.Point(0, 311);
+            this.delete_btn.Location = new System.Drawing.Point(0, 325);
             this.delete_btn.Name = "delete_btn";
             this.delete_btn.Size = new System.Drawing.Size(187, 43);
             this.delete_btn.TabIndex = 4;
@@ -75,7 +79,7 @@
             // add_btn
             // 
             this.add_btn.Font = new System.Drawing.Font("Alef", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.add_btn.Location = new System.Drawing.Point(0, 256);
+            this.add_btn.Location = new System.Drawing.Point(0, 266);
             this.add_btn.Name = "add_btn";
             this.add_btn.Size = new System.Drawing.Size(187, 43);
             this.add_btn.TabIndex = 3;
@@ -85,7 +89,7 @@
             // new_btn
             // 
             this.new_btn.Font = new System.Drawing.Font("Alef", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.new_btn.Location = new System.Drawing.Point(0, 200);
+            this.new_btn.Location = new System.Drawing.Point(0, 207);
             this.new_btn.Name = "new_btn";
             this.new_btn.Size = new System.Drawing.Size(187, 43);
             this.new_btn.TabIndex = 2;
@@ -95,20 +99,48 @@
             // summary_btn
             // 
             this.summary_btn.Font = new System.Drawing.Font("Alef", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.summary_btn.Location = new System.Drawing.Point(0, 143);
+            this.summary_btn.Location = new System.Drawing.Point(0, 148);
             this.summary_btn.Name = "summary_btn";
             this.summary_btn.Size = new System.Drawing.Size(187, 43);
             this.summary_btn.TabIndex = 1;
             this.summary_btn.Text = "Situazione";
             this.summary_btn.UseVisualStyleBackColor = true;
             // 
-            // userControl11
+            // summaryControl1
             // 
-            this.userControl11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControl11.Location = new System.Drawing.Point(187, 0);
-            this.userControl11.Name = "userControl11";
-            this.userControl11.Size = new System.Drawing.Size(767, 561);
-            this.userControl11.TabIndex = 1;
+            this.summaryControl1.Location = new System.Drawing.Point(187, 0);
+            this.summaryControl1.Name = "summaryControl1";
+            this.summaryControl1.Size = new System.Drawing.Size(767, 561);
+            this.summaryControl1.TabIndex = 2;
+            // 
+            // loginControl1
+            // 
+            this.loginControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.loginControl1.Location = new System.Drawing.Point(187, 0);
+            this.loginControl1.Name = "loginControl1";
+            this.loginControl1.Size = new System.Drawing.Size(767, 561);
+            this.loginControl1.TabIndex = 1;
+            // 
+            // addNewControl1
+            // 
+            this.addNewControl1.Location = new System.Drawing.Point(187, 0);
+            this.addNewControl1.Name = "addNewControl1";
+            this.addNewControl1.Size = new System.Drawing.Size(767, 561);
+            this.addNewControl1.TabIndex = 3;
+            // 
+            // addScoresControl1
+            // 
+            this.addScoresControl1.Location = new System.Drawing.Point(187, 0);
+            this.addScoresControl1.Name = "addScoresControl1";
+            this.addScoresControl1.Size = new System.Drawing.Size(767, 561);
+            this.addScoresControl1.TabIndex = 4;
+            // 
+            // delStudentControl1
+            // 
+            this.delStudentControl1.Location = new System.Drawing.Point(187, 0);
+            this.delStudentControl1.Name = "delStudentControl1";
+            this.delStudentControl1.Size = new System.Drawing.Size(767, 561);
+            this.delStudentControl1.TabIndex = 5;
             // 
             // Form1
             // 
@@ -116,7 +148,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(954, 561);
-            this.Controls.Add(this.userControl11);
+            this.Controls.Add(this.delStudentControl1);
+            this.Controls.Add(this.addScoresControl1);
+            this.Controls.Add(this.addNewControl1);
+            this.Controls.Add(this.summaryControl1);
+            this.Controls.Add(this.loginControl1);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -134,7 +170,11 @@
         private System.Windows.Forms.Button new_btn;
         private System.Windows.Forms.Button summary_btn;
         private System.Windows.Forms.Button login_btn;
-        private UserControl1 userControl11;
+        private LoginControl loginControl1;
+        private SummaryControl summaryControl1;
+        private AddNewControl addNewControl1;
+        private AddScoresControl addScoresControl1;
+        private DelStudentControl delStudentControl1;
     }
 }
 

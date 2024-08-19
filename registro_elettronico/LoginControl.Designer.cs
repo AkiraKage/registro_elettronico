@@ -1,6 +1,6 @@
 ﻿namespace registro_elettronico
 {
-    partial class UserControl1
+    partial class LoginControl
     {
         /// <summary> 
         /// Variabile di progettazione necessaria.

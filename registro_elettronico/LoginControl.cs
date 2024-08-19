@@ -13,11 +13,11 @@ using System.IO;
 
 namespace registro_elettronico
 {
-    public partial class UserControl1 : UserControl
+    public partial class LoginControl : UserControl
     {
         bool visible = false;
         List<Student> studenti;
-        public UserControl1()
+        public LoginControl()
         {
             InitializeComponent();
         }
@@ -67,11 +67,8 @@ namespace registro_elettronico
                 {
                     GlobalConfig.logged = true;
 
-                    Form1 parentForm = this.FindForm() as Form1;
-                    if (parentForm != null)
-                    {
-                        parentForm.UpdateVisibility(studenti[i]);
-                    }
+                    Form1 mainForm = this.FindForm() as Form1;
+                    mainForm.StudentEntry(studenti[i]);
 
                     break;
                 }
@@ -79,6 +76,5 @@ namespace registro_elettronico
             if (!GlobalConfig.logged)
                 login_error_lbl.Text = "Le credenziali inserite risultano errate";
         }
-
     }
 }
