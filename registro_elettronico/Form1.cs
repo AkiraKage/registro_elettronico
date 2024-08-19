@@ -20,14 +20,17 @@ namespace registro_elettronico
         {
             InitializeComponent();
             menubtns = new Button[5] { login_btn, summary_btn, new_btn, add_btn, delete_btn };
-            if (!GlobalConfig.logged)
+
+            foreach (Button btn in menubtns)
+                btn.Hide();
+            login_btn.Show();
+        }
+
+        public void UpdateVisibility(Student currentUser)
+        {
+            if (GlobalConfig.logged)
             {
-                foreach (Button btn in menubtns)
-                    btn.Hide();
-                login_btn.Show();
-            }
-            else
-            {
+                login_btn.Enabled = false;
                 if (GlobalConfig.privilege)
                 {
                     foreach (Button btn in menubtns)
@@ -35,15 +38,9 @@ namespace registro_elettronico
                 }
                 else
                 {
-                    for (int i = 0; i < 3; i++)
-                        menubtns[i].Show();
+                    summary_btn.Show();
                 }
             }
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            GlobalConfig.logged = false;
         }
     }
 }

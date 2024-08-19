@@ -12,6 +12,7 @@ namespace registro_elettronico
         public static bool logged = false;
         public static bool privilege = false;
         public static string userRecords { get; private set; }
+        public static Student loggedUser;
 
         static GlobalConfig()
         {

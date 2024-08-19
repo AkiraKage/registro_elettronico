@@ -23,9 +23,15 @@ namespace registro_elettronico
         }
         private void UserControl1_Load(object sender, EventArgs e)
         {
-            //string json = File.ReadAllText(GlobalConfig.userRecords);
+            if (!File.Exists(GlobalConfig.userRecords))
+            {
+                MessageBox.Show("Il file students.json non è stato trovato. Assicurati che il file esista nella directory corretta.", "Errore", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            string json = File.ReadAllText(GlobalConfig.userRecords);
 
-            //studenti = JsonConvert.DeserializeObject<List<Student>>(json);
+            studenti = JsonConvert.DeserializeObject<List<Student>>(json);
 
         }
         private void pass_visibility_Click(object sender, EventArgs e)
@@ -60,9 +66,18 @@ namespace registro_elettronico
                 if (username == expectedUsername && password == expectedPassword)
                 {
                     GlobalConfig.logged = true;
+
+                    Form1 parentForm = this.FindForm() as Form1;
+                    if (parentForm != null)
+                    {
+                        parentForm.UpdateVisibility(studenti[i]);
+                    }
+
                     break;
                 }
             }
+            if (!GlobalConfig.logged)
+                login_error_lbl.Text = "Le credenziali inserite risultano errate";
         }
 
     }
