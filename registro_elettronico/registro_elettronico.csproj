@@ -61,6 +61,12 @@
     <Compile Include="AddScoresControl.Designer.cs">
       <DependentUpon>AddScoresControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminControl.Designer.cs">
+      <DependentUpon>AdminControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="DelStudentControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -89,6 +95,10 @@
     <Compile Include="LoginControl.Designer.cs">
       <DependentUpon>LoginControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Teacher.cs" />
+    <EmbeddedResource Include="AdminControl.resx">
+      <DependentUpon>AdminControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

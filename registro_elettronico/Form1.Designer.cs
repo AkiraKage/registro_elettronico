@@ -29,22 +29,25 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.admin_btn = new System.Windows.Forms.Button();
             this.login_btn = new System.Windows.Forms.Button();
             this.delete_btn = new System.Windows.Forms.Button();
             this.add_btn = new System.Windows.Forms.Button();
             this.new_btn = new System.Windows.Forms.Button();
             this.summary_btn = new System.Windows.Forms.Button();
+            this.delStudentControl1 = new registro_elettronico.DelStudentControl();
+            this.addScoresControl1 = new registro_elettronico.AddScoresControl();
+            this.addNewControl1 = new registro_elettronico.AddNewControl();
             this.summaryControl1 = new registro_elettronico.SummaryControl();
             this.loginControl1 = new registro_elettronico.LoginControl();
-            this.addNewControl1 = new registro_elettronico.AddNewControl();
-            this.addScoresControl1 = new registro_elettronico.AddScoresControl();
-            this.delStudentControl1 = new registro_elettronico.DelStudentControl();
+            this.adminControl1 = new registro_elettronico.AdminControl();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.admin_btn);
             this.panel1.Controls.Add(this.login_btn);
             this.panel1.Controls.Add(this.delete_btn);
             this.panel1.Controls.Add(this.add_btn);
@@ -55,6 +58,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(187, 561);
             this.panel1.TabIndex = 0;
+            // 
+            // admin_btn
+            // 
+            this.admin_btn.BackColor = System.Drawing.Color.LightCoral;
+            this.admin_btn.Font = new System.Drawing.Font("Alef", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.admin_btn.Location = new System.Drawing.Point(0, 413);
+            this.admin_btn.Name = "admin_btn";
+            this.admin_btn.Size = new System.Drawing.Size(187, 43);
+            this.admin_btn.TabIndex = 6;
+            this.admin_btn.Text = "Gestisci Insegnanti";
+            this.admin_btn.UseVisualStyleBackColor = false;
             // 
             // login_btn
             // 
@@ -106,6 +120,27 @@
             this.summary_btn.Text = "Situazione";
             this.summary_btn.UseVisualStyleBackColor = true;
             // 
+            // delStudentControl1
+            // 
+            this.delStudentControl1.Location = new System.Drawing.Point(187, 0);
+            this.delStudentControl1.Name = "delStudentControl1";
+            this.delStudentControl1.Size = new System.Drawing.Size(767, 561);
+            this.delStudentControl1.TabIndex = 5;
+            // 
+            // addScoresControl1
+            // 
+            this.addScoresControl1.Location = new System.Drawing.Point(187, 0);
+            this.addScoresControl1.Name = "addScoresControl1";
+            this.addScoresControl1.Size = new System.Drawing.Size(767, 561);
+            this.addScoresControl1.TabIndex = 4;
+            // 
+            // addNewControl1
+            // 
+            this.addNewControl1.Location = new System.Drawing.Point(187, 0);
+            this.addNewControl1.Name = "addNewControl1";
+            this.addNewControl1.Size = new System.Drawing.Size(767, 561);
+            this.addNewControl1.TabIndex = 3;
+            // 
             // summaryControl1
             // 
             this.summaryControl1.Location = new System.Drawing.Point(187, 0);
@@ -121,26 +156,12 @@
             this.loginControl1.Size = new System.Drawing.Size(767, 561);
             this.loginControl1.TabIndex = 1;
             // 
-            // addNewControl1
+            // adminControl1
             // 
-            this.addNewControl1.Location = new System.Drawing.Point(187, 0);
-            this.addNewControl1.Name = "addNewControl1";
-            this.addNewControl1.Size = new System.Drawing.Size(767, 561);
-            this.addNewControl1.TabIndex = 3;
-            // 
-            // addScoresControl1
-            // 
-            this.addScoresControl1.Location = new System.Drawing.Point(187, 0);
-            this.addScoresControl1.Name = "addScoresControl1";
-            this.addScoresControl1.Size = new System.Drawing.Size(767, 561);
-            this.addScoresControl1.TabIndex = 4;
-            // 
-            // delStudentControl1
-            // 
-            this.delStudentControl1.Location = new System.Drawing.Point(187, 0);
-            this.delStudentControl1.Name = "delStudentControl1";
-            this.delStudentControl1.Size = new System.Drawing.Size(767, 561);
-            this.delStudentControl1.TabIndex = 5;
+            this.adminControl1.Location = new System.Drawing.Point(187, 0);
+            this.adminControl1.Name = "adminControl1";
+            this.adminControl1.Size = new System.Drawing.Size(767, 561);
+            this.adminControl1.TabIndex = 6;
             // 
             // Form1
             // 
@@ -148,6 +169,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(954, 561);
+            this.Controls.Add(this.adminControl1);
             this.Controls.Add(this.delStudentControl1);
             this.Controls.Add(this.addScoresControl1);
             this.Controls.Add(this.addNewControl1);
@@ -175,6 +197,8 @@
         private AddNewControl addNewControl1;
         private AddScoresControl addScoresControl1;
         private DelStudentControl delStudentControl1;
+        private System.Windows.Forms.Button admin_btn;
+        private AdminControl adminControl1;
     }
 }
 

@@ -17,22 +17,14 @@ namespace registro_elettronico
     {
         bool visible = false;
         List<Student> studenti;
+        List<Teacher> insegnanti;
         public LoginControl()
         {
             InitializeComponent();
         }
         private void UserControl1_Load(object sender, EventArgs e)
         {
-            if (!File.Exists(GlobalConfig.userRecords))
-            {
-                MessageBox.Show("Il file students.json non è stato trovato. Assicurati che il file esista nella directory corretta.", "Errore", 
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            string json = File.ReadAllText(GlobalConfig.userRecords);
-
-            studenti = JsonConvert.DeserializeObject<List<Student>>(json);
-
+            studenti = GlobalConfig.allStudents;
         }
         private void pass_visibility_Click(object sender, EventArgs e)
         {
@@ -52,12 +44,43 @@ namespace registro_elettronico
 
         private void access_btn_Click(object sender, EventArgs e)
         {
+            Form1 mainForm = this.FindForm() as Form1;
             string username = username_txtbox.Text.Trim();
             string password = password_txtbox.Text.Trim();
+
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
                 login_error_lbl.Text = "Attenzione! I campi non possono essere vuoti";
                 return;
+            }
+
+            if (password.Substring(password.Length - 4) == "0000")
+            {
+                if (!File.Exists(GlobalConfig.teacherRecords))
+                {
+                    MessageBox.Show("Il file teachers.json non è stato trovato. Assicurati che il file esista nella directory corretta.", "Errore",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                string json = File.ReadAllText(GlobalConfig.teacherRecords);
+                insegnanti = JsonConvert.DeserializeObject<List<Teacher>>(json);
+
+                for (int i = 0; i < insegnanti.Count; i++)
+                {
+                    string expectedUsername = insegnanti[i].name + "_" + insegnanti[i].surname;
+                    string expectedPassword = insegnanti[i].perskey + insegnanti[i].numericID.ToString();
+                    if (username == expectedUsername && password == expectedPassword)
+                    {
+                        GlobalConfig.logged = true;
+                        GlobalConfig.privilege = true;
+                        if (password.Substring(password.Length - 5) == "00000")
+                            GlobalConfig.fullPrivilege = true;
+
+                        mainForm.PrivilegeEntry();
+                        return;
+                    }
+                }
+
             }
             for (int i = 0; i < studenti.Count; i++)
             {
@@ -67,10 +90,10 @@ namespace registro_elettronico
                 {
                     GlobalConfig.logged = true;
 
-                    Form1 mainForm = this.FindForm() as Form1;
-                    mainForm.StudentEntry(studenti[i]);
+                    mainForm.StudentEntry();
 
-                    break;
+                    GlobalConfig.loggedUser = studenti[i];
+                    return;
                 }
             }
             if (!GlobalConfig.logged)

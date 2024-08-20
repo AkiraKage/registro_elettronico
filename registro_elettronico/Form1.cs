@@ -20,8 +20,8 @@ namespace registro_elettronico
         public Form1()
         {
             InitializeComponent();
-            menubtns = new Button[5] { login_btn, summary_btn, new_btn, add_btn, delete_btn };
-            usercontrols = new UserControl[5] { loginControl1, summaryControl1, addNewControl1, addScoresControl1, delStudentControl1 };
+            menubtns = new Button[6] { login_btn, summary_btn, new_btn, add_btn, delete_btn, admin_btn };
+            usercontrols = new UserControl[6] { loginControl1, summaryControl1, addNewControl1, addScoresControl1, delStudentControl1, adminControl1 };
 
             foreach (Button btn in menubtns)
                 btn.Hide();
@@ -31,9 +31,9 @@ namespace registro_elettronico
             loginControl1.Show();
         }
 
-        public void StudentEntry(Student currentUser)
+        public void StudentEntry()
         {
-            if (GlobalConfig.logged)
+            if (GlobalConfig.logged && !GlobalConfig.privilege)
             {
                 login_btn.Enabled = false;
                 summary_btn.Show();
@@ -41,6 +41,23 @@ namespace registro_elettronico
                 foreach (UserControl userControl in usercontrols)
                     userControl.Hide();
                 summaryControl1.Show();
+            }
+        }
+
+        public void PrivilegeEntry()
+        {
+            if (GlobalConfig.logged && GlobalConfig.privilege)
+            {
+                login_btn.Enabled = false;
+                foreach (Button btn in menubtns)
+                    btn.Show();
+
+                foreach (UserControl userControl in usercontrols)
+                    userControl.Hide();
+                summaryControl1.Show();
+
+                if (!GlobalConfig.fullPrivilege)
+                    admin_btn.Hide();
             }
         }
     }
