@@ -53,6 +53,11 @@ namespace registro_elettronico
                 login_error_lbl.Text = "Attenzione! I campi non possono essere vuoti";
                 return;
             }
+            if (password.Length < 8)
+            {
+                login_error_lbl.Text = "Le credenziali inserite risultano errate";
+                return;
+            }
 
             if (password.Substring(password.Length - 4) == "0000")
             {
@@ -89,10 +94,9 @@ namespace registro_elettronico
                 if (username == expectedUsername && password == expectedPassword)
                 {
                     GlobalConfig.logged = true;
+                    GlobalConfig.loggedUser = studenti[i];
 
                     mainForm.StudentEntry();
-
-                    GlobalConfig.loggedUser = studenti[i];
                     return;
                 }
             }

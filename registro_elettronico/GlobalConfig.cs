@@ -16,15 +16,16 @@ namespace registro_elettronico
         public static bool fullPrivilege = false;
         public static string userRecords { get; private set; }
         public static string teacherRecords { get; private set; }
+
         public static Student loggedUser;
 
         public static List<Student> allStudents;
+        public static Dictionary<string, List<Student>> schoolClasses = new Dictionary<string, List<Student>>();
 
         static GlobalConfig()
         {
             userRecords = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "students.json");
             teacherRecords = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "teachers.json");
-
 
             if (!File.Exists(userRecords))
             {

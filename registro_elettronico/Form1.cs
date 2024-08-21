@@ -52,6 +52,19 @@ namespace registro_elettronico
                 foreach (Button btn in menubtns)
                     btn.Show();
 
+                var students = GlobalConfig.allStudents;
+                foreach (var student in students)
+                {
+                    if (GlobalConfig.schoolClasses.ContainsKey(student.year_section))
+                    {
+                        GlobalConfig.schoolClasses[student.year_section].Add(student);
+                    }
+                    else
+                    {
+                        GlobalConfig.schoolClasses[student.year_section] = new List<Student> { student };
+                    }
+                }
+
                 foreach (UserControl userControl in usercontrols)
                     userControl.Hide();
                 summaryControl1.Show();
