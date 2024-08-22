@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,7 +17,8 @@ namespace registro_elettronico
     {
         Button[] menubtns;
         UserControl[] usercontrols;
-        
+        UserControl currentOpen;
+
         public Form1()
         {
             InitializeComponent();
@@ -29,6 +31,7 @@ namespace registro_elettronico
             foreach (UserControl userControl in usercontrols)
                 userControl.Hide();
             loginControl1.Show();
+            currentOpen = loginControl1;
         }
 
         public void StudentEntry()
@@ -37,7 +40,8 @@ namespace registro_elettronico
             {
                 login_btn.Enabled = false;
                 summary_btn.Show();
-                
+                currentOpen = summaryControl1;
+
                 foreach (UserControl userControl in usercontrols)
                     userControl.Hide();
                 summaryControl1.Show();
@@ -51,6 +55,7 @@ namespace registro_elettronico
                 login_btn.Enabled = false;
                 foreach (Button btn in menubtns)
                     btn.Show();
+                currentOpen = summaryControl1;
 
                 var students = GlobalConfig.allStudents;
                 foreach (var student in students)
@@ -72,6 +77,38 @@ namespace registro_elettronico
                 if (!GlobalConfig.fullPrivilege)
                     admin_btn.Hide();
             }
+        }
+
+        private void SwitchUserControl(UserControl newControl)
+        {
+            currentOpen.Hide();
+
+            newControl.Show();
+            currentOpen = newControl;
+        }
+        private void summary_btn_Click(object sender, EventArgs e)
+        {
+            SwitchUserControl(summaryControl1);
+        }
+
+        private void new_btn_Click(object sender, EventArgs e)
+        {
+            SwitchUserControl(addNewControl1);
+        }
+
+        private void add_btn_Click(object sender, EventArgs e)
+        {
+            SwitchUserControl(addScoresControl1);
+        }
+
+        private void delete_btn_Click(object sender, EventArgs e)
+        {
+            SwitchUserControl(delStudentControl1);
+        }
+
+        private void admin_btn_Click(object sender, EventArgs e)
+        {
+            SwitchUserControl(adminControl1);
         }
     }
 }

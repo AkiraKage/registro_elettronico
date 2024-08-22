@@ -61,7 +61,7 @@
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Alef", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(52, 110);
+            this.label3.Location = new System.Drawing.Point(22, 141);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(154, 26);
             this.label3.TabIndex = 2;
@@ -71,7 +71,7 @@
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Alef", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(52, 149);
+            this.label4.Location = new System.Drawing.Point(22, 180);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(154, 26);
             this.label4.TabIndex = 3;
@@ -81,7 +81,7 @@
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Alef", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(52, 187);
+            this.label5.Location = new System.Drawing.Point(22, 218);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(154, 26);
             this.label5.TabIndex = 4;
@@ -91,7 +91,7 @@
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Alef", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(52, 226);
+            this.label6.Location = new System.Drawing.Point(22, 257);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(154, 26);
             this.label6.TabIndex = 5;
@@ -101,7 +101,7 @@
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Alef", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(52, 264);
+            this.label7.Location = new System.Drawing.Point(22, 295);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(154, 26);
             this.label7.TabIndex = 6;
@@ -111,7 +111,7 @@
             // label8
             // 
             this.label8.Font = new System.Drawing.Font("Alef", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(52, 301);
+            this.label8.Location = new System.Drawing.Point(22, 332);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(154, 26);
             this.label8.TabIndex = 7;
@@ -121,7 +121,7 @@
             // label9
             // 
             this.label9.Font = new System.Drawing.Font("Alef", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(52, 339);
+            this.label9.Location = new System.Drawing.Point(22, 370);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(154, 26);
             this.label9.TabIndex = 8;
@@ -131,7 +131,7 @@
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("Alef", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(52, 375);
+            this.label10.Location = new System.Drawing.Point(22, 406);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(154, 26);
             this.label10.TabIndex = 9;
@@ -145,13 +145,14 @@
             this.studentSelectBox.Location = new System.Drawing.Point(222, 38);
             this.studentSelectBox.Name = "studentSelectBox";
             this.studentSelectBox.Size = new System.Drawing.Size(193, 26);
-            this.studentSelectBox.Sorted = true;
             this.studentSelectBox.TabIndex = 10;
+            this.studentSelectBox.SelectedIndexChanged += new System.EventHandler(this.studentSelectBox_SelectedIndexChanged);
             // 
             // italianoTable
             // 
-            this.italianoTable.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.italianoTable.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.italianoTable.BackColor = System.Drawing.SystemColors.Control;
+            this.italianoTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.italianoTable.ColumnCount = 15;
             this.italianoTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.italianoTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
@@ -167,18 +168,19 @@
             this.italianoTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.italianoTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.italianoTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.italianoTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.italianoTable.Location = new System.Drawing.Point(235, 106);
+            this.italianoTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.italianoTable.Location = new System.Drawing.Point(194, 106);
             this.italianoTable.Name = "italianoTable";
             this.italianoTable.RowCount = 1;
             this.italianoTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.italianoTable.Size = new System.Drawing.Size(454, 32);
+            this.italianoTable.Size = new System.Drawing.Size(467, 32);
             this.italianoTable.TabIndex = 11;
             // 
             // storiaTable
             // 
-            this.storiaTable.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.storiaTable.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.storiaTable.BackColor = System.Drawing.SystemColors.Control;
+            this.storiaTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.storiaTable.ColumnCount = 15;
             this.storiaTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.storiaTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
@@ -194,18 +196,19 @@
             this.storiaTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.storiaTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.storiaTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.storiaTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.storiaTable.Location = new System.Drawing.Point(235, 145);
+            this.storiaTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.storiaTable.Location = new System.Drawing.Point(194, 145);
             this.storiaTable.Name = "storiaTable";
             this.storiaTable.RowCount = 1;
             this.storiaTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.storiaTable.Size = new System.Drawing.Size(454, 32);
+            this.storiaTable.Size = new System.Drawing.Size(467, 32);
             this.storiaTable.TabIndex = 12;
             // 
             // matematicaTable
             // 
-            this.matematicaTable.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.matematicaTable.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.matematicaTable.BackColor = System.Drawing.SystemColors.Control;
+            this.matematicaTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.matematicaTable.ColumnCount = 15;
             this.matematicaTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.matematicaTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
@@ -221,18 +224,19 @@
             this.matematicaTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.matematicaTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.matematicaTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.matematicaTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.matematicaTable.Location = new System.Drawing.Point(235, 184);
+            this.matematicaTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.matematicaTable.Location = new System.Drawing.Point(194, 184);
             this.matematicaTable.Name = "matematicaTable";
             this.matematicaTable.RowCount = 1;
             this.matematicaTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.matematicaTable.Size = new System.Drawing.Size(454, 32);
+            this.matematicaTable.Size = new System.Drawing.Size(467, 32);
             this.matematicaTable.TabIndex = 13;
             // 
             // ingleseTable
             // 
-            this.ingleseTable.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.ingleseTable.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ingleseTable.BackColor = System.Drawing.SystemColors.Control;
+            this.ingleseTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.ingleseTable.ColumnCount = 15;
             this.ingleseTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.ingleseTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
@@ -248,18 +252,19 @@
             this.ingleseTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.ingleseTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.ingleseTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.ingleseTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.ingleseTable.Location = new System.Drawing.Point(235, 223);
+            this.ingleseTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.ingleseTable.Location = new System.Drawing.Point(194, 223);
             this.ingleseTable.Name = "ingleseTable";
             this.ingleseTable.RowCount = 1;
             this.ingleseTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.ingleseTable.Size = new System.Drawing.Size(454, 32);
+            this.ingleseTable.Size = new System.Drawing.Size(467, 32);
             this.ingleseTable.TabIndex = 13;
             // 
             // informaticaTable
             // 
-            this.informaticaTable.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.informaticaTable.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.informaticaTable.BackColor = System.Drawing.SystemColors.Control;
+            this.informaticaTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.informaticaTable.ColumnCount = 15;
             this.informaticaTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.informaticaTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
@@ -275,18 +280,19 @@
             this.informaticaTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.informaticaTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.informaticaTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.informaticaTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.informaticaTable.Location = new System.Drawing.Point(235, 261);
+            this.informaticaTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.informaticaTable.Location = new System.Drawing.Point(194, 261);
             this.informaticaTable.Name = "informaticaTable";
             this.informaticaTable.RowCount = 1;
             this.informaticaTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.informaticaTable.Size = new System.Drawing.Size(454, 32);
+            this.informaticaTable.Size = new System.Drawing.Size(467, 32);
             this.informaticaTable.TabIndex = 13;
             // 
             // sistemiTable
             // 
-            this.sistemiTable.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.sistemiTable.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.sistemiTable.BackColor = System.Drawing.SystemColors.Control;
+            this.sistemiTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.sistemiTable.ColumnCount = 15;
             this.sistemiTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.sistemiTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
@@ -302,18 +308,19 @@
             this.sistemiTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.sistemiTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.sistemiTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.sistemiTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.sistemiTable.Location = new System.Drawing.Point(235, 298);
+            this.sistemiTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.sistemiTable.Location = new System.Drawing.Point(194, 298);
             this.sistemiTable.Name = "sistemiTable";
             this.sistemiTable.RowCount = 1;
             this.sistemiTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.sistemiTable.Size = new System.Drawing.Size(454, 32);
+            this.sistemiTable.Size = new System.Drawing.Size(467, 32);
             this.sistemiTable.TabIndex = 13;
             // 
             // tpsitTable
             // 
-            this.tpsitTable.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tpsitTable.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tpsitTable.BackColor = System.Drawing.SystemColors.Control;
+            this.tpsitTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tpsitTable.ColumnCount = 15;
             this.tpsitTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tpsitTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
@@ -329,18 +336,19 @@
             this.tpsitTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tpsitTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tpsitTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tpsitTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tpsitTable.Location = new System.Drawing.Point(235, 335);
+            this.tpsitTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tpsitTable.Location = new System.Drawing.Point(194, 335);
             this.tpsitTable.Name = "tpsitTable";
             this.tpsitTable.RowCount = 1;
             this.tpsitTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tpsitTable.Size = new System.Drawing.Size(454, 32);
+            this.tpsitTable.Size = new System.Drawing.Size(467, 32);
             this.tpsitTable.TabIndex = 14;
             // 
             // telecomunicazioniTable
             // 
-            this.telecomunicazioniTable.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.telecomunicazioniTable.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.telecomunicazioniTable.BackColor = System.Drawing.SystemColors.Control;
+            this.telecomunicazioniTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.telecomunicazioniTable.ColumnCount = 15;
             this.telecomunicazioniTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.telecomunicazioniTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
@@ -356,12 +364,12 @@
             this.telecomunicazioniTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.telecomunicazioniTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.telecomunicazioniTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.telecomunicazioniTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.telecomunicazioniTable.Location = new System.Drawing.Point(235, 373);
+            this.telecomunicazioniTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.telecomunicazioniTable.Location = new System.Drawing.Point(194, 373);
             this.telecomunicazioniTable.Name = "telecomunicazioniTable";
             this.telecomunicazioniTable.RowCount = 1;
             this.telecomunicazioniTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.telecomunicazioniTable.Size = new System.Drawing.Size(454, 32);
+            this.telecomunicazioniTable.Size = new System.Drawing.Size(467, 32);
             this.telecomunicazioniTable.TabIndex = 13;
             // 
             // classSelectBox
@@ -373,6 +381,7 @@
             this.classSelectBox.Size = new System.Drawing.Size(80, 26);
             this.classSelectBox.Sorted = true;
             this.classSelectBox.TabIndex = 15;
+            this.classSelectBox.SelectedIndexChanged += new System.EventHandler(this.classSelectBox_SelectedIndexChanged);
             // 
             // SummaryControl
             // 
@@ -398,7 +407,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.BirthDataBox);
             this.Name = "SummaryControl";
-            this.Size = new System.Drawing.Size(819, 495);
+            this.Size = new System.Drawing.Size(736, 495);
             this.Load += new System.EventHandler(this.SummaryControl_Load);
             this.ResumeLayout(false);
 

@@ -35,12 +35,12 @@
             this.add_btn = new System.Windows.Forms.Button();
             this.new_btn = new System.Windows.Forms.Button();
             this.summary_btn = new System.Windows.Forms.Button();
+            this.adminControl1 = new registro_elettronico.AdminControl();
             this.delStudentControl1 = new registro_elettronico.DelStudentControl();
             this.addScoresControl1 = new registro_elettronico.AddScoresControl();
             this.addNewControl1 = new registro_elettronico.AddNewControl();
             this.summaryControl1 = new registro_elettronico.SummaryControl();
             this.loginControl1 = new registro_elettronico.LoginControl();
-            this.adminControl1 = new registro_elettronico.AdminControl();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,6 +89,7 @@
             this.delete_btn.TabIndex = 4;
             this.delete_btn.Text = "Elimina";
             this.delete_btn.UseVisualStyleBackColor = true;
+            this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
             // 
             // add_btn
             // 
@@ -99,6 +100,7 @@
             this.add_btn.TabIndex = 3;
             this.add_btn.Text = "Aggiungi voti";
             this.add_btn.UseVisualStyleBackColor = true;
+            this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
             // 
             // new_btn
             // 
@@ -109,6 +111,7 @@
             this.new_btn.TabIndex = 2;
             this.new_btn.Text = "Registra nuovo";
             this.new_btn.UseVisualStyleBackColor = true;
+            this.new_btn.Click += new System.EventHandler(this.new_btn_Click);
             // 
             // summary_btn
             // 
@@ -119,6 +122,14 @@
             this.summary_btn.TabIndex = 1;
             this.summary_btn.Text = "Situazione";
             this.summary_btn.UseVisualStyleBackColor = true;
+            this.summary_btn.Click += new System.EventHandler(this.summary_btn_Click);
+            // 
+            // adminControl1
+            // 
+            this.adminControl1.Location = new System.Drawing.Point(187, 0);
+            this.adminControl1.Name = "adminControl1";
+            this.adminControl1.Size = new System.Drawing.Size(767, 561);
+            this.adminControl1.TabIndex = 6;
             // 
             // delStudentControl1
             // 
@@ -156,13 +167,6 @@
             this.loginControl1.Size = new System.Drawing.Size(767, 561);
             this.loginControl1.TabIndex = 1;
             // 
-            // adminControl1
-            // 
-            this.adminControl1.Location = new System.Drawing.Point(187, 0);
-            this.adminControl1.Name = "adminControl1";
-            this.adminControl1.Size = new System.Drawing.Size(767, 561);
-            this.adminControl1.TabIndex = 6;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -178,7 +182,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Registro Elettronico";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
