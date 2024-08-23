@@ -96,6 +96,12 @@
       <DependentUpon>LoginControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Teacher.cs" />
+    <EmbeddedResource Include="AddNewControl.resx">
+      <DependentUpon>AddNewControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddScoresControl.resx">
+      <DependentUpon>AddScoresControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminControl.resx">
       <DependentUpon>AdminControl.cs</DependentUpon>
     </EmbeddedResource>

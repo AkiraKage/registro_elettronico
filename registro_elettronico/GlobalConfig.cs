@@ -22,6 +22,8 @@ namespace registro_elettronico
         public static List<Student> allStudents;
         public static Dictionary<string, List<Student>> schoolClasses = new Dictionary<string, List<Student>>();
 
+        public static event Action StudentsUpdated;
+
         static GlobalConfig()
         {
             userRecords = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "students.json");
@@ -35,6 +37,12 @@ namespace registro_elettronico
             }
             string json = File.ReadAllText(userRecords);
             allStudents = JsonConvert.DeserializeObject<List<Student>>(json);
+        }
+        public static void UpdateStudentJson()
+        {
+            string json = JsonConvert.SerializeObject(allStudents, Formatting.Indented);
+            File.WriteAllText(userRecords, json);
+            StudentsUpdated.Invoke();
         }
     }
 }

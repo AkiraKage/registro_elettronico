@@ -13,7 +13,7 @@ namespace registro_elettronico
     public partial class SummaryControl : UserControl
     {
         TableLayoutPanel[] gradeTables;
-        Dictionary<string, List<Student>> allStudents = GlobalConfig.schoolClasses;
+        Dictionary<string, List<Student>> allStudents;
         string[] studentNames;
         string[] studentBirthData;
         Dictionary<string, List<int>>[] studentGrades;
@@ -21,10 +21,13 @@ namespace registro_elettronico
         {
             InitializeComponent();
             gradeTables = new TableLayoutPanel[8] { italianoTable, storiaTable, matematicaTable, ingleseTable, informaticaTable, sistemiTable, tpsitTable, telecomunicazioniTable };
+
+            GlobalConfig.StudentsUpdated += classUpdate;
         }
 
         private void SummaryControl_Load(object sender, EventArgs e)
         {
+            allStudents = GlobalConfig.schoolClasses;
             if (GlobalConfig.privilege)
             {
                 classSelectBox.Items.AddRange(allStudents.Keys.ToArray());
@@ -68,7 +71,7 @@ namespace registro_elettronico
                 classUpdate();
         }
 
-        private void classUpdate()
+        public void classUpdate()
         {
             var selectedClass = classSelectBox.SelectedItem as string;
             var students = allStudents[selectedClass];

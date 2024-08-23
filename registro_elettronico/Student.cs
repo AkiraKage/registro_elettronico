@@ -29,6 +29,5 @@ namespace registro_elettronico
 
         [JsonProperty("voti")]
         public Dictionary<string, List<int>> scores { get; set; }
-
     }
 }

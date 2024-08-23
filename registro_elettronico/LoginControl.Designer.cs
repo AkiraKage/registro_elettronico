@@ -117,7 +117,7 @@
             this.login_error_lbl.TabIndex = 7;
             this.login_error_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // UserControl1
+            // LoginControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -129,8 +129,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "UserControl1";
-            this.Size = new System.Drawing.Size(836, 523);
+            this.Name = "LoginControl";
+            this.Size = new System.Drawing.Size(792, 523);
             this.Load += new System.EventHandler(this.UserControl1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
