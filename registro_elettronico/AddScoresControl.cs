@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System;
 
 namespace registro_elettronico
 {
@@ -31,7 +26,7 @@ namespace registro_elettronico
             classSelBox.Items.Add("");
             classSelBox.Items.AddRange(classes);
 
-            if (classes.Length > 0) //altro controllo aggiuntivo per risolvere errore stupido di vs
+            if (classes.Length > 0)
             {
                 classSelBox.SelectedIndex = 0;
                 UpdateStudentList();
@@ -82,7 +77,21 @@ namespace registro_elettronico
 
             var selectedStudentName = studentSelBox.SelectedItem.ToString();
             var selectedClass = classSelBox.SelectedItem as string;
-            var selectedStudent = GlobalConfig.schoolClasses[selectedClass].FirstOrDefault(s => $"{s.name} {s.surname}" == selectedStudentName);
+
+            Student selectedStudent = null;
+            if (GlobalConfig.schoolClasses.ContainsKey(selectedClass))
+            {
+                var studentsInClass = GlobalConfig.schoolClasses[selectedClass];
+
+                foreach (var student in studentsInClass)
+                {
+                    if ($"{student.name} {student.surname}" == selectedStudentName)
+                    {
+                        selectedStudent = student;
+                        break;
+                    }
+                }
+            }
 
             if (selectedStudent == null)
             {

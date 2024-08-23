@@ -55,9 +55,7 @@
     <Compile Include="AddNewControl.Designer.cs">
       <DependentUpon>AddNewControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddScoresControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="AddScoresControl.cs" />
     <Compile Include="AddScoresControl.Designer.cs">
       <DependentUpon>AddScoresControl.cs</DependentUpon>
     </Compile>
