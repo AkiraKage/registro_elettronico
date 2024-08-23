@@ -48,6 +48,7 @@
             this.studentSelBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.addScoresButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label11
@@ -242,10 +243,21 @@
             this.addScoresButton.UseVisualStyleBackColor = true;
             this.addScoresButton.Click += new System.EventHandler(this.addScoresButton_Click);
             // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Alef", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(69, 109);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(219, 23);
+            this.label2.TabIndex = 43;
+            this.label2.Text = "Inserisci i voti separati da virgole";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // AddScoresControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.addScoresButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.classSelBox);
@@ -296,5 +308,6 @@
         private System.Windows.Forms.ComboBox studentSelBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button addScoresButton;
+        private System.Windows.Forms.Label label2;
     }
 }

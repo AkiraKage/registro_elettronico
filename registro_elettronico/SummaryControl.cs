@@ -40,7 +40,7 @@ namespace registro_elettronico
                 var currStudent = GlobalConfig.loggedUser;
                 if (currStudent == null) //controllo per evitare errore stupido di vs
                 {
-                    MessageBox.Show("Nessun utente loggato", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Console.WriteLine("errore di vs: utente non loggato");
                     return;
                 }
 

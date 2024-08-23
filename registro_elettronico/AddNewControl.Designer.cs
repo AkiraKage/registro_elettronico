@@ -57,6 +57,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.newBirthPlaceBox = new System.Windows.Forms.TextBox();
             this.registerNewBox = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // classSelBox
@@ -343,10 +344,21 @@
             this.registerNewBox.UseVisualStyleBackColor = true;
             this.registerNewBox.Click += new System.EventHandler(this.registerNewBox_Click);
             // 
+            // label15
+            // 
+            this.label15.Font = new System.Drawing.Font("Alef", 8.75F, System.Drawing.FontStyle.Bold);
+            this.label15.Location = new System.Drawing.Point(41, 177);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(219, 23);
+            this.label15.TabIndex = 44;
+            this.label15.Text = "Inserisci i voti separati da virgole";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // AddNewControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.registerNewBox);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.newBirthPlaceBox);
@@ -417,5 +429,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox newBirthPlaceBox;
         private System.Windows.Forms.Button registerNewBox;
+        private System.Windows.Forms.Label label15;
     }
 }

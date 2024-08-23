@@ -27,9 +27,20 @@ namespace registro_elettronico
         private void AddScoresControl_Load(object sender, EventArgs e)
         {
             classSelBox.Items.Clear();
-            classSelBox.Items.AddRange(GlobalConfig.schoolClasses.Keys.ToArray());
-            classSelBox.SelectedIndex = 0;
-            UpdateStudentList();
+            var classes = GlobalConfig.schoolClasses.Keys.ToArray();
+            classSelBox.Items.Add("");
+            classSelBox.Items.AddRange(classes);
+
+            if (classes.Length > 0) //altro controllo aggiuntivo per risolvere errore stupido di vs
+            {
+                classSelBox.SelectedIndex = 0;
+                UpdateStudentList();
+            }
+            else
+            {
+                classSelBox.SelectedIndex = -1;
+                studentSelBox.Items.Clear();
+            }
         }
 
         private void classSelBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -40,16 +51,29 @@ namespace registro_elettronico
         private void UpdateStudentList()
         {
             var selectedClass = classSelBox.SelectedItem as string;
-            var students = GlobalConfig.schoolClasses[selectedClass];
+            if (!string.IsNullOrEmpty(selectedClass) && GlobalConfig.schoolClasses.ContainsKey(selectedClass))
+            {
+                var students = GlobalConfig.schoolClasses[selectedClass];
 
-            studentSelBox.Items.Clear();
-            studentSelBox.Items.Add("");
-            studentSelBox.Items.AddRange(students.Select(s => $"{s.name} {s.surname}").ToArray());
-            studentSelBox.SelectedIndex = 0;
+                studentSelBox.Items.Clear();
+                studentSelBox.Items.Add("");
+                studentSelBox.Items.AddRange(students.Select(s => $"{s.name} {s.surname}").ToArray());
+                studentSelBox.SelectedIndex = 0;
+            }
+            else
+            {
+                studentSelBox.Items.Clear();
+                studentSelBox.SelectedIndex = -1;
+            }
         }
 
         private void addScoresButton_Click(object sender, EventArgs e)
         {
+            if (classSelBox.SelectedIndex < 1)
+            {
+                MessageBox.Show("Seleziona una classe", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (studentSelBox.SelectedIndex < 1)
             {
                 MessageBox.Show("Seleziona uno studente", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -116,7 +140,6 @@ namespace registro_elettronico
 
         private void ResetFormFields()
         {
-            classSelBox.SelectedIndex = 0;
             studentSelBox.SelectedIndex = 0;
             foreach (var txtbox in subjectGradeBoxes)
                 txtbox.Clear();

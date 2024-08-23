@@ -31,8 +31,7 @@ namespace registro_elettronico
 
             if (!File.Exists(userRecords))
             {
-                MessageBox.Show("Il file students.json non è stato trovato. Assicurati che il file esista nella directory corretta.", "Errore",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine("errore di vs: students.json non trovato");
                 return;
             }
             string json = File.ReadAllText(userRecords);
