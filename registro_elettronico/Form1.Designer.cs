@@ -69,6 +69,7 @@
             this.admin_btn.TabIndex = 6;
             this.admin_btn.Text = "Gestisci Insegnanti";
             this.admin_btn.UseVisualStyleBackColor = false;
+            this.admin_btn.Click += new System.EventHandler(this.admin_btn_Click);
             // 
             // login_btn
             // 
@@ -147,7 +148,9 @@
             // 
             // addNewControl1
             // 
+            this.addNewControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addNewControl1.Location = new System.Drawing.Point(187, 0);
+            this.addNewControl1.Margin = new System.Windows.Forms.Padding(4);
             this.addNewControl1.Name = "addNewControl1";
             this.addNewControl1.Size = new System.Drawing.Size(767, 561);
             this.addNewControl1.TabIndex = 3;

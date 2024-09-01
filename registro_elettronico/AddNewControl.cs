@@ -42,7 +42,7 @@ namespace registro_elettronico
             else
             {
                 if (newClass.Text.Trim().Length > 0)
-                    targetClass = newClass.Text;
+                    targetClass = newClass.Text.Trim();
                 else
                 {
                     MessageBox.Show("Seleziona una classe o creane una nuova", "Errore",
@@ -54,7 +54,7 @@ namespace registro_elettronico
 
             //assegnazione nome
             if (newNameBox.Text.Trim().Length > 0)
-                newname = newNameBox.Text;
+                newname = newNameBox.Text.Trim();
             else
             {
                 MessageBox.Show("Inserire un nome valido", "Errore",
@@ -62,19 +62,10 @@ namespace registro_elettronico
                 error = true;
                 return;
             }
-            if (newSurnameBox.Text.Trim().Length > 0)
-                newsurname = newSurnameBox.Text;
-            else
-            {
-                MessageBox.Show("Inserire un cognome valido", "Errore",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                error = true;
-                return;
-            }
 
             //assegnazione cognome
             if (newSurnameBox.Text.Trim().Length > 0)
-                newsurname = newSurnameBox.Text;
+                newsurname = newSurnameBox.Text.Trim();
             else
             {
                 MessageBox.Show("Inserire un cognome valido", "Errore",
@@ -96,7 +87,7 @@ namespace registro_elettronico
 
             //assegnazione del luogo di nascita
             if (newBirthPlaceBox.Text.Trim().Length > 0)
-                newbirthPlace = newBirthPlaceBox.Text;
+                newbirthPlace = newBirthPlaceBox.Text.Trim();
             else
             {
                 MessageBox.Show("Inserire un luogo di nascita valido", "Errore",

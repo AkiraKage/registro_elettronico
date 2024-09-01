@@ -86,6 +86,7 @@ namespace registro_elettronico
             newControl.Show();
             currentOpen = newControl;
         }
+
         private void summary_btn_Click(object sender, EventArgs e)
         {
             SwitchUserControl(summaryControl1);
@@ -109,6 +110,7 @@ namespace registro_elettronico
         private void admin_btn_Click(object sender, EventArgs e)
         {
             SwitchUserControl(adminControl1);
+            Console.WriteLine("Risk zone");
         }
     }
 }
